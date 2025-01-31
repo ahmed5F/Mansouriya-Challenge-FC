@@ -1,0 +1,154 @@
+:root {
+    --نيلي: #1a237e;        /* اللون النيلي */
+    --رصاصي: #b0bec5;       /* اللون الرصاصي الفاتح */
+    --ظل: 0 2px 5px rgba(0,0,0,0.1); /* تأثير ظل */
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial Arabic', Tahoma, sans-serif;
+    background: linear-gradient(45deg, var(--نيلي), var(--رصاصي));
+    min-height: 100vh;
+}
+
+/* تصميم الشريط الجانبي المتحرك */
+.sidebar {
+    position: fixed;
+    right: -250px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 0 15px 15px 0;
+    transition: all 0.4s ease-in-out;
+    width: 250px;
+    box-shadow: var(--ظل);
+    z-index: 1000;
+}
+
+.sidebar:hover {
+    right: 0;
+}
+
+.menu-item {
+    margin: 20px 0;
+    padding: 12px;
+    cursor: pointer;
+    color: var(--نيلي);
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.menu-item:hover {
+    background: rgba(26, 35, 126, 0.1);
+}
+
+/* تصميم المحتوى الرئيسي */
+.main-content {
+    margin-right: 300px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    min-height: 100vh;
+    box-shadow: var(--ظل);
+    border-radius: 15px 0 0 15px;
+}
+
+/* تصميم الهيدر */
+.header {
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+    background: var(--نيلي);
+    margin-bottom: 30px;
+    border-bottom: 3px solid var(--رصاصي);
+}
+
+/* تصميم بطاقات اللاعبين */
+.player-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.player-card {
+    border: 2px solid var(--رصاصي);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s;
+    background: white;
+}
+
+.player-card:hover {
+    transform: translateY(-5px);
+}
+
+.placeholder-img {
+    width: 120px;
+    height: 120px;
+    background: #f0f0f0;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border: 2px dashed var(--رصاصي);
+}
+
+/* تصميم قائمة المدربين */
+#coaches ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 15px;
+}
+
+#coaches li {
+    padding: 15px;
+    background: rgba(176, 190, 197, 0.2);
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* تأثيرات الانتقالات */
+* {
+    scroll-behavior: smooth;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* التصميم للهواتف */
+@media (max-width: 768px) {
+    .main-content {
+        margin-right: 0;
+        padding: 20px;
+    }
+    
+    .sidebar {
+        width: 200px;
+        right: -200px;
+    }
+    
+    .player-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* تصميم الفوتر */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7); /* لون داكن لتمييزه */
+    color: white;
+    text-align: center;
+    font-size: 12px; /* تصغير الحجم */
+    padding: 5px 10px;
+    z-index: 1000;
+}
+
+/* تأكد من أن المحتوى الرئيسي لا يتداخل مع الفوتر */
+.main-content {
+    padding-bottom: 50px; /* ترك مساحة للفوتر */
+}

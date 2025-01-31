@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فريق تحدي المنصورية</title>
+    <style>
+        /* الألوان والخطوط */
+        :root {
+            --primary: #2c3e50; /* الأزرق الداكن */
+            --secondary: #e74c3c; /* الأحمر */
+            --background: #f4f4f4; /* الخلفية الفاتحة */
+            --white: #fff;
+            --dark: #333;
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--background);
+            color: var(--dark);
+            text-align: center;
+        }
+
+        /* رأس الصفحة */
+        header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+            font-size: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* شريط التبويبات */
+        .tabs-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .tab {
+            padding: 12px 20px;
+            background: var(--white);
+            border: 2px solid var(--primary);
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s ease-in-out;
+            outline: none;
+            margin: 5px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .tab:hover, .tab.active {
+            background: var(--secondary);
+            color: var(--white);
+        }
+
+        /* الأقسام */
+        .content-section {
+            display: none;
+            padding: 20px;
+            background: var(--white);
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 90%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        /* القوائم */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: var(--background);
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        /* التذييل */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 15px;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        /* تحسين العرض على الأجهزة الصغيرة */
+        @media (max-width: 768px) {
+            .tabs-container {
+                flex-direction: column;
+            }
+
+            .tab {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+            
+        <h1>فريق تحدي المنصورية</h1>
+        <p>العراق - ذي قار - المنصورية</p>
+    </header>  
+
+    <!-- شريط التبويبات -->
+    <div class="tabs-container">  
+     <button class="tab active" 
+       onclick="showSection('news', this)">الأخبار</button>
+        <button class="tab" onclick="showSection('coaches', this)">المدربون</button>
+        <button class="tab" onclick="showSection('matches', this)">المباريات</button>
+        <button class="tab" onclick="showSection('players', this)">اللاعبون</button>
+        <button class="tab" onclick="showSection('history', this)">التاريخ</button>
+    </div>
+
+    <!-- الأقسام -->
+    <section id="players" class="content-section active">
+        <h2>اللاعبون</h2>
+        <ul>
+            <li>غزوان علي - 1</li>
+            <li> محمد مهدي - 30</li>
+            <li>موسى عقيل - 12</li>
+            <li>2 - احمد سالم</li>
+            <li>وليد سعد - 14</li>
+            <li>حسين هادي - 17</li>
+            <li>مبارك عبدالله - 22</li>
+            <li>سيف سعد - 9</li>
+            <li>24 - عايد خيراللة</li>
+            <li>13 - سيف سعد</li>
+            <li>15 - مجيد عبداللة</li>
+            <li>7 - حسين عبد</li>
+            <li>حسن عبد - 19</li>
+        </ul>
+    </section>
+
+    <section id="coaches" class="content-section">
+        <h2>المدربون</h2>
+        <ul>
+            <li>المدرب جبار الغزي</li>
+           
+          <li>المدرب وائل الطائي</li>
+        </ul>
+    </section>
+
+    <section id="matches" class="content-section">
+        <h2>المباريات القادمة</h2>
+        <ul>
+            <li>تحدي المنصورية vs فريق النجوم - 10 فبراير 2025</li>
+            <li>تحدي المنصورية vs فريق المدينة - 17 فبراير 2025</li>
+        </ul>
+    </section>
+
+    <section id="news" class="content-section">
+        <h2>الأخبار</h2>
+        <ul>
+            <li>خسارة  لتحدي المنصورية في المباراة الأخيرة!</li>
+            <li>اللاعب حسين هادي يتألق بتسجيله هدفين في المباراة الأخيرة.</li>
+            <li>اليوم، وعلى أرض ملعب المنصورية، شهدنا مباراة ودية مثيرة ضد فريق اتحاد النوارس. على الرغم من أن المباراة انتهت بخسارة فريقنا 2-1، إلا أن هذا لا يعني نهاية الطريق، بل هو جزء من مشوار التحدي والنجاح. الخسارة تذكرة لنا بأننا بحاجة للعمل أكثر، لكن النجاح لا يأتي إلا بعد التجارب الصعبة.
+
+فريقنا قدم أداءً قويًا وكانوا على قدر المسؤولية، ولكن مثل أي مباراة، هناك دائمًا أشياء يمكن تحسينها. اللاعبون أظهروا روح التعاون والتحدي، وكل واحد منهم بذل قصارى جهده في الملعب. هذه المباريات الودية تمنحنا الفرصة للتعلم من الأخطاء، وتصحيح المسار نحو المزيد من التقدم.
+
+من المهم أن نتذكر أن الخسارة ليست نهاية، بل بداية مرحلة جديدة من الإصرار والعزيمة. علينا أن نستفيد من كل لحظة في المباراة لتحسين الأداء وتعزيز التنسيق بين اللاعبين. الفريق بأكمله كان رائعًا في تقديم كل ما لديه، ومن هنا نبدأ في العمل بشكل أقوى وأكثر تركيزًا.
+
+إلى كل اللاعبين، المدربين، والمشجعين، أنتم جميعًا تستحقون التقدير على الجهود التي بذلتموها. لا تتركوا هذه الخسارة تثنيكم عن المضي قدمًا. هذا هو وقت الاستمرار في التدريب والعمل الجماعي لتطوير كل الجوانب. تحدي المنصورية سيبقى قويًا، والمستقبل أمامنا مشرق بإذن الله. فكل خطوة نخطوها معًا تقربنا أكثر نحو تحقيق أهدافنا.</li>
+        </ul>
+    </section>
+
+    <section id="history" class="content-section">
+        <h2>التاريخ</h2>
+        <p>تأسس فريق تحدي المنصورية عام 2006، ومنذ ذلك الحين شارك في العديد من البطولات المحلية وحقق العديد من الإنجازات. الفريق معروف بروحه الرياضية العالية وتفانيه في تحقيق الفوز.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 فريق تحدي المنصورية. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId, clickedTab) {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            document.getElementById(sectionId).classList.add('active');
+            clickedTab.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
