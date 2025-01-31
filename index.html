@@ -12,7 +12,8 @@
             --background: #f4f4f4; /* الخلفية الفاتحة */
             --white: #fff;
             --dark: #333;
-        
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -87,6 +88,20 @@
             border-radius: 5px;
         }
 
+        /* تنسيق صور المدربين */
+        .coach {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .coach img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+        }
+
         /* التذييل */
         footer {
             background: var(--primary);
@@ -114,15 +129,13 @@
 <body>
 
     <header>
-            
         <h1>فريق تحدي المنصورية</h1>
         <p>العراق - ذي قار - المنصورية</p>
     </header>  
 
     <!-- شريط التبويبات -->
     <div class="tabs-container">  
-     <button class="tab active" 
-       onclick="showSection('news', this)">الأخبار</button>
+        <button class="tab active" onclick="showSection('news', this)">الأخبار</button>
         <button class="tab" onclick="showSection('coaches', this)">المدربون</button>
         <button class="tab" onclick="showSection('matches', this)">المباريات</button>
         <button class="tab" onclick="showSection('players', this)">اللاعبون</button>
@@ -130,31 +143,34 @@
     </div>
 
     <!-- الأقسام -->
-    <section id="players" class="content-section active">
+    <section id="coaches" class="content-section active">
+        <h2>المدربون</h2>
+        <div class="coach">
+            <img src="images/coach1.jpg" alt="المدرب جبار الغزي">
+            <p>المدرب جبار الغزي</p>
+        </div>
+        <div class="coach">
+            <img src="images/coach2.jpg" alt="المدرب وائل الطائي">
+            <p>المدرب وائل الطائي</p>
+        </div>
+    </section>
+
+    <section id="players" class="content-section">
         <h2>اللاعبون</h2>
         <ul>
             <li>غزوان علي - 1</li>
-            <li> محمد مهدي - 30</li>
+            <li>محمد مهدي - 30</li>
             <li>موسى عقيل - 12</li>
-            <li>2 - احمد سالم</li>
+            <li>أحمد سالم - 2</li>
             <li>وليد سعد - 14</li>
             <li>حسين هادي - 17</li>
             <li>مبارك عبدالله - 22</li>
             <li>سيف سعد - 9</li>
-            <li>24 - عايد خيراللة</li>
-            <li>13 - سيف سعد</li>
-            <li>15 - مجيد عبداللة</li>
-            <li>7 - حسين عبد</li>
+            <li>عايد خيرالله - 24</li>
+            <li>سيف سعد - 13</li>
+            <li>مجيد عبدالله - 15</li>
+            <li>حسين عبد - 7</li>
             <li>حسن عبد - 19</li>
-        </ul>
-    </section>
-
-    <section id="coaches" class="content-section">
-        <h2>المدربون</h2>
-        <ul>
-        <li>المدرب جابر الغزي</li>
-           
-          <li>المدرب وائل الطائي</li>
         </ul>
     </section>
 
@@ -169,15 +185,8 @@
     <section id="news" class="content-section">
         <h2>الأخبار</h2>
         <ul>
-            <li>خسارة  لتحدي المنصورية في المباراة الأخيرة!</li>
+            <li>خسارة لتحدي المنصورية في المباراة الأخيرة!</li>
             <li>اللاعب حسين هادي يتألق بتسجيله هدفين في المباراة الأخيرة.</li>
-            <li>اليوم، وعلى أرض ملعب المنصورية، شهدنا مباراة ودية مثيرة ضد فريق اتحاد النوارس. على الرغم من أن المباراة انتهت بخسارة فريقنا 2-1، إلا أن هذا لا يعني نهاية الطريق، بل هو جزء من مشوار التحدي والنجاح. الخسارة تذكرة لنا بأننا بحاجة للعمل أكثر، لكن النجاح لا يأتي إلا بعد التجارب الصعبة.
-
-فريقنا قدم أداءً قويًا وكانوا على قدر المسؤولية، ولكن مثل أي مباراة، هناك دائمًا أشياء يمكن تحسينها. اللاعبون أظهروا روح التعاون والتحدي، وكل واحد منهم بذل قصارى جهده في الملعب. هذه المباريات الودية تمنحنا الفرصة للتعلم من الأخطاء، وتصحيح المسار نحو المزيد من التقدم.
-
-من المهم أن نتذكر أن الخسارة ليست نهاية، بل بداية مرحلة جديدة من الإصرار والعزيمة. علينا أن نستفيد من كل لحظة في المباراة لتحسين الأداء وتعزيز التنسيق بين اللاعبين. الفريق بأكمله كان رائعًا في تقديم كل ما لديه، ومن هنا نبدأ في العمل بشكل أقوى وأكثر تركيزًا.
-
-إلى كل اللاعبين، المدربين، والمشجعين، أنتم جميعًا تستحقون التقدير على الجهود التي بذلتموها. لا تتركوا هذه الخسارة تثنيكم عن المضي قدمًا. هذا هو وقت الاستمرار في التدريب والعمل الجماعي لتطوير كل الجوانب. تحدي المنصورية سيبقى قويًا، والمستقبل أمامنا مشرق بإذن الله. فكل خطوة نخطوها معًا تقربنا أكثر نحو تحقيق أهدافنا.</li>
         </ul>
     </section>
 
@@ -192,14 +201,8 @@
 
     <script>
         function showSection(sectionId, clickedTab) {
-            document.querySelectorAll('.content-section').forEach(section => {
-                section.classList.remove('active');
-            });
-
-            document.querySelectorAll('.tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-
+            document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
             document.getElementById(sectionId).classList.add('active');
             clickedTab.classList.add('active');
         }
