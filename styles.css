@@ -152,3 +152,9 @@ footer {
 .main-content {
     padding-bottom: 50px; /* ترك مساحة للفوتر */
 }
+#coaches img {
+    border-radius: 50%; /* لجعل الصور دائرية */
+    border: 3px solid var(--primary); /* إطار للصورة */
+    display: block;
+    margin: 10px auto;
+}
